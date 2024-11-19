@@ -4,9 +4,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
-@Table(name = "students_query")
+@Document(collection = "students")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,7 +16,7 @@ import lombok.*;
 public class Student {
     @Id
     @GeneratedValue
-    private long code;
+    private String code;
 
     private String firstName;
     private String lastName;
